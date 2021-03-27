@@ -9,6 +9,7 @@
 - Клонировать проект `git clone https://github.com/hvckxm/mediasoft-checklist-laravel -b develop`
 - Создать .env файл в директории проекта и настроить его.
 - Установить зависимости, используя команду `composer install`
+- Установить ключ проекта командой `php artisan key:generate`
 ## Доступ в админку
 - Чтобы выдать админку, нужно прописать команду `php artisan voyager:admin your@email.com`
 ## Описание, как запустить проект
