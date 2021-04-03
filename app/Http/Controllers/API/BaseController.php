@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller as Controller;
 class BaseController extends Controller
 {
     /**
-     * Success response method.
+     * Success response
      *
      * @param $result
      * @param $message
@@ -27,7 +27,7 @@ class BaseController extends Controller
     }
 
     /**
-     * Return error response.
+     * Error response
      *
      * @param $error
      * @param array $errorMessages

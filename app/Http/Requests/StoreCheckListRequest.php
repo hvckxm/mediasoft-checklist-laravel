@@ -24,8 +24,8 @@ class StoreCheckListRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|min:3|max:32',
-            'description' => 'required|min:10|max:255'
+            'name.*' => 'required|min:3|max:32',
+            'description.*' => 'required|min:10|max:255'
         ];
     }
 }

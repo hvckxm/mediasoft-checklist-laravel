@@ -38,9 +38,13 @@ class CheckListController extends BaseController
         if (!Gate::allows('store-checklist'))
             return $this->sendError('Access denied', 'You have reached your limit of checklists', 403);
 
-        $store = auth()->user()->checklist()->saveMany($request->validated());
+        foreach ($request->validated()['name'] as $item) {
+            $store = auth()->user()->checklist()->create([
+                'name' => $item
+            ]);
+        }
 
-        return $this->sendResponse($store, 'Successfully created');
+        return $this->sendResponse($request->validated(), 'Successfully created');
     }
 
     /**

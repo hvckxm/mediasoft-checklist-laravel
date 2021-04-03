@@ -18,17 +18,6 @@ class UserObserver
     }
 
     /**
-     * Handle the User "updated" event.
-     *
-     * @param User $user
-     * @return void
-     */
-    public function updated(User $user)
-    {
-        //
-    }
-
-    /**
      * Handle the User "deleted" event.
      *
      * @param User $user
@@ -38,17 +27,6 @@ class UserObserver
     {
         $user->access()->delete();
         $user->checklist()->delete();
-    }
-
-    /**
-     * Handle the User "restored" event.
-     *
-     * @param User $user
-     * @return void
-     */
-    public function restored(User $user)
-    {
-        //
     }
 
     /**
