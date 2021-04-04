@@ -25,7 +25,7 @@ class StoreTaskRequest extends FormRequest
     {
         return [
             'text' => 'required|string|min:4|max:64',
-            'status' => 'required|boolean'
+            'status' => 'boolean'
         ];
     }
 }

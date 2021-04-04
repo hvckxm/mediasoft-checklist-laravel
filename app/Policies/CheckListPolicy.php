@@ -23,11 +23,12 @@ class CheckListPolicy
     /**
      * Access to create checklist
      *
+     * @param $count
      * @return bool
      */
-    public function store(): bool
+    public function store($count): bool
     {
-        return auth()->user()->access->max_checklists >= auth()->user()->checklist()->count();
+         return auth()->user()->access->max_checklists > auth()->user()->checklist()->count();
     }
 
     /**
@@ -41,5 +42,4 @@ class CheckListPolicy
     {
         return $checklist->user_id == $user->id;
     }
-
 }

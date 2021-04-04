@@ -35,7 +35,7 @@ class CheckListController extends BaseController
      */
     public function store(StoreCheckListRequest $request): JsonResponse
     {
-        if (!Gate::allows('store-checklist'))
+        if (!Gate::allows('store-checklist', count($request->validated()['name'])))
             return $this->sendError('Access denied', 'You have reached your limit of checklists', 403);
 
         foreach ($request->validated()['name'] as $item) {
